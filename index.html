@@ -20,6 +20,12 @@
       <button type="submit">新增</button>
     </form>
 
+    <div class="todo-filters" role="group" aria-label="篩選待辦事項">
+      <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">全部</button>
+      <button class="filter-button" type="button" data-filter="active" aria-pressed="false">未完成</button>
+      <button class="filter-button" type="button" data-filter="completed" aria-pressed="false">已完成</button>
+    </div>
+
     <section class="todo-list-area" aria-live="polite">
       <p class="empty-message" id="empty-message">還沒有任何待辦事項,新增一個吧!</p>
       <ul class="todo-list" id="todo-list"></ul>
