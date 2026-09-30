@@ -6,7 +6,7 @@
 
 ## 線上展示
 
-`https://<你的帳號>.github.io/<你的repo名稱>/`
+[https://edwardyoyo.github.io/edward1/](https://edwardyoyo.github.io/edward1/)
 
 ## 功能
 
