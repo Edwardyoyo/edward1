@@ -8,6 +8,14 @@
   --accent-hover: #246b5c;
   --completed-color: #98a7a2;
   --shadow-color: rgba(39, 72, 64, 0.12);
+  --page-gradient-start: #f5f8f6;
+  --card-border-color: rgba(220, 230, 226, 0.8);
+  --input-background: #fbfdfc;
+  --focus-shadow-color: rgba(45, 128, 110, 0.14);
+  --button-text-color: #ffffff;
+  --item-background: #f8fbfa;
+  --danger-color: #b14e4e;
+  --danger-background: #fff1f1;
 }
 
 * {
@@ -21,7 +29,7 @@ body {
   display: grid;
   place-items: center;
   color: var(--text-primary);
-  background: linear-gradient(135deg, #f5f8f6 0%, var(--page-background) 100%);
+  background: linear-gradient(135deg, var(--page-gradient-start) 0%, var(--page-background) 100%);
   font-family: "Microsoft JhengHei", "Noto Sans TC", sans-serif;
 }
 
@@ -30,7 +38,7 @@ body {
   padding: 36px;
   overflow: hidden;
   background: var(--card-background);
-  border: 1px solid rgba(220, 230, 226, 0.8);
+  border: 1px solid var(--card-border-color);
   border-radius: 18px;
   box-shadow: 0 18px 45px var(--shadow-color);
 }
@@ -70,7 +78,7 @@ h1 {
   flex: 1;
   padding: 13px 15px;
   color: var(--text-primary);
-  background: #fbfdfc;
+  background: var(--input-background);
   border: 1px solid var(--border-color);
   border-radius: 9px;
   outline: none;
@@ -79,7 +87,7 @@ h1 {
 
 .todo-form input:focus {
   border-color: var(--accent-color);
-  box-shadow: 0 0 0 3px rgba(45, 128, 110, 0.14);
+  box-shadow: 0 0 0 3px var(--focus-shadow-color);
 }
 
 button {
@@ -93,13 +101,45 @@ button {
 
 .todo-form button {
   padding: 0 20px;
-  color: #ffffff;
+  color: var(--button-text-color);
   background: var(--accent-color);
 }
 
 .todo-form button:hover,
 .todo-form button:focus-visible {
   background: var(--accent-hover);
+}
+
+.todo-filters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.filter-button {
+  flex: 1;
+  padding: 8px 10px;
+  color: var(--text-secondary);
+  background: var(--input-background);
+  border: 1px solid var(--border-color);
+  border-radius: 9px;
+  font: inherit;
+  font-size: 0.9rem;
+}
+
+.filter-button:hover {
+  border-color: var(--accent-color);
+}
+
+.filter-button:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+.filter-button.is-active {
+  color: var(--button-text-color);
+  background: var(--accent-color);
+  border-color: var(--accent-color);
 }
 
 button:active {
@@ -123,7 +163,7 @@ button:active {
   align-items: center;
   gap: 12px;
   padding: 13px 14px;
-  background: #f8fbfa;
+  background: var(--item-background);
   border: 1px solid var(--border-color);
   border-radius: 10px;
 }
@@ -158,8 +198,8 @@ button:active {
 
 .delete-button:hover,
 .delete-button:focus-visible {
-  color: #b14e4e;
-  background: #fff1f1;
+  color: var(--danger-color);
+  background: var(--danger-background);
 }
 
 .empty-message {
